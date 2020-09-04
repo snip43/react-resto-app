@@ -3,7 +3,7 @@
         width: 350px;
         min-height: 400px;
         background-color: #fff;
-        box-shadow: 5px 5px 45px rgba(256,256,256,.1);
+        box-shadow: 5px 5px 45px rgba(256, 256, 256, .1);
         border-radius: 8px;
         padding: 20px;
         margin-right: 40px;
@@ -21,12 +21,26 @@
         object-fit: cover;
         margin-bottom: 20px;
     }
-    &__category, &__price {
+    &__category,
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-size: 18px;
         font-weight: 300;
         margin-bottom: 10px;
         span {
             font-weight: 700;
+        }
+        .category__icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+            img {
+                width: 50px;
+                height: 50px;
+                left: 100%;
+            }
         }
     }
     &__btn {
