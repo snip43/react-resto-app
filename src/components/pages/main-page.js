@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuList from '../menu-list';
 import { connect } from 'react-redux';
-import { menuLoaded, menuRequseted, menuError } from '../../actions/';
+import { menuLoaded, menuRequseted, menuError, addedToCart } from '../../actions/';
 
 import WithRestoService from '../hoc/';
 
@@ -20,7 +20,9 @@ class MainPage extends Component {
   render() {
     const { menuItems, loading, error } = this.props;
 
-    return <MenuList menuItems={menuItems} loading={loading} error={error} />;
+    return (
+      <MenuList menuItems={menuItems} loading={loading} error={error} addedToCart={addedToCart} />
+    );
   }
 }
 
@@ -35,6 +37,7 @@ const mapDispatchToProps = {
   menuLoaded,
   menuRequseted,
   menuError,
+  addedToCart,
 };
 
 export default WithRestoService()(connect(mapStateToProps, mapDispatchToProps)(MainPage));

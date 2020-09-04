@@ -15,4 +15,16 @@ const menuError = () => {
   };
 };
 
-export { menuLoaded, menuRequseted, menuError };
+const addedToCart = (id) => {
+  return {
+    type: 'ADD_TO_CART',
+    payload: id,
+  };
+};
+const deletedFromCart = () => {
+  return {
+    type: 'DELETE_FROM_CART',
+  };
+};
+
+export { menuLoaded, menuRequseted, menuError, addedToCart, deletedFromCart };

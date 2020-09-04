@@ -1,7 +1,8 @@
 import React from 'react';
 import './menu-list-item.scss';
 
-const MenuListItem = ({ menuItem }) => {
+const MenuListItem = ({ menuItem, addedToCart }) => {
+  console.log(addedToCart);
   let icon_url = '';
   const { title, price, url, category } = menuItem;
 
@@ -26,7 +27,9 @@ const MenuListItem = ({ menuItem }) => {
       <div className="menu__price">
         Price: <span>{price}$</span>
       </div>
-      <button className="menu__btn">Add to cart</button>
+      <button onClick={() => addedToCart()} className="menu__btn">
+        Add to cart
+      </button>
     </li>
   );
 };

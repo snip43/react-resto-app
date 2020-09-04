@@ -1,5 +1,6 @@
 const initialState = {
   menu: [],
+  items: [],
   loading: false,
   error: false,
 };
@@ -12,15 +13,33 @@ const reducer = (state = initialState, action) => {
       };
     case 'MENU_REQUESTED':
       return {
-        menu: state.menu,
+        ...state,
         loading: true,
-        error: false,
       };
     case 'MENU_ERROR':
       return {
-        menu: state.menu,
-        loading: false,
+        ...state,
         error: true,
+      };
+
+    case 'ADD_TO_CART':
+      const item = state.menu.find((item) => item.id === action.payload);
+      const newItem = {
+        title: item.title,
+        price: item.price,
+        url: item.url,
+        id: item.id,
+      };
+      return {
+        ...state,
+        items: [...state, newItem],
+      };
+
+    case 'DELETE_FROM_CART':
+      const delItemIndex = state.items.findIndex((item) => item.id === action.payload);
+      return {
+        ...state,
+        items: [...state, state.items.slice(0, delItemIndex), state.items.slice(delItemIndex + 1)],
       };
     default:
       return state;
