@@ -2,9 +2,8 @@ import React from 'react';
 import './menu-list-item.scss';
 
 const MenuListItem = ({ menuItem, addedToCart }) => {
-  console.log(addedToCart);
   let icon_url = '';
-  const { title, price, url, category } = menuItem;
+  const { title, price, url, category, id } = menuItem;
 
   if (category === 'pizza') {
     icon_url = 'https://im0-tub-ru.yandex.net/i?id=949edbe001119bbe543737ca99711e63&n=13';
@@ -27,7 +26,7 @@ const MenuListItem = ({ menuItem, addedToCart }) => {
       <div className="menu__price">
         Price: <span>{price}$</span>
       </div>
-      <button onClick={() => addedToCart()} className="menu__btn">
+      <button onClick={() => addedToCart(id)} className="menu__btn">
         Add to cart
       </button>
     </li>

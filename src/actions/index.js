@@ -21,10 +21,25 @@ const addedToCart = (id) => {
     payload: id,
   };
 };
-const deletedFromCart = () => {
+
+const deletedFromCart = (id) => {
   return {
     type: 'DELETE_FROM_CART',
+    payload: id,
   };
 };
 
-export { menuLoaded, menuRequseted, menuError, addedToCart, deletedFromCart };
+const upQtty = (id) => {
+  return {
+    type: 'UP_QTTY',
+    payload: id,
+  };
+};
+const downQtty = (id) => {
+  return {
+    type: 'DOWN_QTTY',
+    payload: id,
+  };
+};
+
+export { menuLoaded, menuRequseted, menuError, addedToCart, deletedFromCart, upQtty, downQtty };

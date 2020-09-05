@@ -20,13 +20,7 @@ const MenuList = ({ menuItems, loading, error, addedToCart }) => {
   return (
     <ul className="menu__list">
       {menuItems.map((menuItem) => {
-        return (
-          <MenuListItem
-            addedToCart={() => addedToCart(menuItem.id)}
-            key={menuItem.id}
-            menuItem={menuItem}
-          />
-        );
+        return <MenuListItem addedToCart={addedToCart} key={menuItem.id} menuItem={menuItem} />;
       })}
     </ul>
   );

@@ -18,7 +18,7 @@ class MainPage extends Component {
   }
 
   render() {
-    const { menuItems, loading, error } = this.props;
+    const { menuItems, loading, error, addedToCart } = this.props;
 
     return (
       <MenuList menuItems={menuItems} loading={loading} error={error} addedToCart={addedToCart} />
