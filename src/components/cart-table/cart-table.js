@@ -1,7 +1,7 @@
 import React from 'react';
 import './cart-table.scss';
 
-const CartTable = ({ items, deletedFromCart, qtty, upQtty, downQtty }) => {
+const CartTable = ({ items, deletedFromCart, upQtty, downQtty }) => {
   if (items.length === 0) {
     return (
       <>
